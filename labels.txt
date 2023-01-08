@@ -1,0 +1,3 @@
+0 bottle
+1 shell
+2 background
