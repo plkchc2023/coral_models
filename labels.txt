@@ -1,3 +1,0 @@
-0 box
-1 human
-2 background
