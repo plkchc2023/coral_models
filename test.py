@@ -1,19 +1,11 @@
-import board
-import digitalio
-import busio
+from periphery import GPIO
 
-print("Hello blinka!")
+led = GPIO("/dev/gpiochip2", 13, "out")  # pin 37
 
-# Try to great a Digital input
-pin = digitalio.DigitalInOut(board.GPIO_P13)
-print("Digital IO ok!")
-
-# Try to create an I2C device
-i2c = busio.I2C(board.SCL, board.SDA)
-print("I2C ok!")
-
-# Try to create an SPI device
-spi = busio.SPI(board.SCLK, board.MOSI, board.MISO)
-print("SPI ok!")
-
-print("done!")
+try:
+  while True:
+    led.write(True)
+finally:
+  led.write(False)
+  led.close()
+  button.close()
